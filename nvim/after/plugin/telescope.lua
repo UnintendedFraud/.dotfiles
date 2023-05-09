@@ -2,6 +2,8 @@ local builtin = require("telescope.builtin")
 
 local M = {}
 
+require("telescope").load_extension("fzf")
+
 M.project_files = function()
 	local opts = require("telescope.themes").get_ivy({})
 	opts.find_command = { "rg", "--files", "--hidden", "--follow", "--glob", "!.git/*" }

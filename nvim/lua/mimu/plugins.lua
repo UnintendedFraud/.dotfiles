@@ -1,3 +1,8 @@
+local fzf_make_cmd = "make"
+if vim.loop.os_uname().machine == "arm64" then
+	fzf_make_cmd = " arch -arm64 make"
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -20,7 +25,26 @@ return require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			defaults = {
+				file_ignore_patterns = {
+					".git/worktrees",
+					".git/COMMIT_EDITMSG",
+				},
+			},
+			extensions = {
+				fzf = {
+					fuzzy = true, -- false will only do exact matching
+					override_generic_sorter = true, -- override the generic sorter
+					override_file_sorter = true, -- override the file sorter
+					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+				},
+			},
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = fzf_make_cmd }, -- Fzf native
+		},
 	},
 
 	-- theme
