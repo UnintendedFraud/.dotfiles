@@ -76,11 +76,11 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       padding = " ",
       symlink_arrow = " ➛ ",
       show = {
-        file = true,
-        folder = true,
-        folder_arrow = true,
-        git = true,
-        modified = true,
+        file = false,
+        folder = false,
+        folder_arrow = false,
+        git = false,
+        modified = false,
       },
       glyphs = {
         default = " ",
@@ -108,7 +108,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
         },
       },
     },
-    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+    special_files = {},
     symlink_destination = true,
   },
   hijack_directories = {

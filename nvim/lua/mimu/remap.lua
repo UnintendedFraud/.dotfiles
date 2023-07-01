@@ -31,4 +31,4 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- toggle nvim-tree
-vim.keymap.set("n", "<C-f>", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>NvimTreeFindFileToggle<CR>")
