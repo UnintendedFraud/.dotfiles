@@ -1,5 +1,3 @@
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

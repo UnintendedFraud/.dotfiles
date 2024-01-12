@@ -16,23 +16,11 @@ return {
 		end,
     },
 
-    -- telescope
     {
         "nvim-lua/plenary.nvim",
         name = "plenary"
     },
 
-    -- trouble / diagnostics
-    { 
-        "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup({
-                icons = false,
-            })
-        end
-    },
-
-    -- fugitive / git
     {
 	    "lewis6991/gitsigns.nvim",
         name = "gitsigns",
@@ -46,6 +34,8 @@ return {
             require("Comment").setup()
         end
     },
+
+    "github/copilot.vim",
 
 
 }
