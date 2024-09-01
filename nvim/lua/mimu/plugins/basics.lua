@@ -1,19 +1,19 @@
 return {
     -- Color scheme
-  {
-    "rktjmp/lush.nvim",
-    name = "lush",
-    priority = 1000,
-  },
+    {
+        "rktjmp/lush.nvim",
+        name = "lush",
+        priority = 1000,
+    },
 
     {
-		"ramojus/mellifluous.nvim",
+        "ramojus/mellifluous.nvim",
         dependencies = {
             "lush"
         },
-		config = function()
-			vim.cmd("colorscheme mellifluous")
-		end,
+        config = function()
+            vim.cmd("colorscheme mellifluous")
+        end,
     },
 
     {
@@ -22,20 +22,17 @@ return {
     },
 
     {
-	    "lewis6991/gitsigns.nvim",
+        "lewis6991/gitsigns.nvim",
         name = "gitsigns",
     },
 
-	-- Comment
-	{ 
-        "numToStr/Comment.nvim", 
+    -- Comment
+    {
+        "numToStr/Comment.nvim",
         event = "BufRead",
         config = function()
             require("Comment").setup()
         end
     },
-
-    "github/copilot.vim",
-
 
 }
